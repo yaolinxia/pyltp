@@ -24,23 +24,19 @@ def load_json(path):
     print(load_dict)
     return load_dict
 
-# 读取文件
-def read_file(path):
+# 读取文件，把每一个name值存放进列表中
+def name_to_list(path):
     # 定义一个列表，存放每一句name字段的value值
     name_list = []
     with open(path, 'r', encoding='utf-8') as f:
         # 每个line都是一个字典，提取其中的name值
         for line in f:
-            # print(line)
             # 转换成字典类型
             line = eval(line)
-            # print(type(line))
-            # print(line["name"])
             name_list.append(line["name"])
-    # print(name_list)
     return name_list
 
-# 分句子
+# 分句子（没有使用到）
 def sen_spliter(sen):
     single_sen = SentenceSplitter.split(sen)
     print('\n'.join(single_sen))
@@ -56,14 +52,10 @@ def sen_word(sen):
     # print('\t'.join(words))
     # 转化成list输出
     words_list = list(words)
-    # for word in words_list:
-        # print(word)
     # 释放模型
-    # print(words_list)
     segmentor.release()
     return words_list
 
-# 词性标注
 # 词性标注. words:已经切分好的词
 def word_tag(words):
     words_list = []
@@ -89,11 +81,11 @@ def to_json(dict, save_path):
         json_file.write('\n')
 
 if __name__ == '__main__':
-    json_path = 'H:\python-workspace\pyltp\split_name\\action_code_data_0.json'
+    # 原始文件
     txt_path = 'H:\python-workspace\pyltp\split_name\\action_code_data_0.txt'
+    # 定义json的输出路径
     json_out_path = 'namesplit_only_noun.json'
-    # 定义一个dict
-    name_list = read_file(txt_path)
+    name_list = name_to_list(txt_path)
     for name_value in name_list:
         name_dict = {}
         name_dict["name"] = name_value
@@ -101,7 +93,10 @@ if __name__ == '__main__':
         words_list = word_tag(sen_list)
         name_dict["word_list"] = words_list
         to_json(name_dict, json_out_path)
-    gc.collect()
+        gc.collect()
+
+
+
 
 
         # print(name_dict)
