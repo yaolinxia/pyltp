@@ -3,9 +3,11 @@
 import json
 import gc
 import re
+import jieba
 from pyltp import SentenceSplitter
 from pyltp import Segmentor
 from pyltp import Postagger
+from pyltp import Parser
 
 """
 完成时间：2018.12.20
@@ -40,7 +42,7 @@ def sen_spliter(sen):
     single_sen = SentenceSplitter.split(sen)
     print('\n'.join(single_sen))
 
-# 分词
+# LTP分词
 def sen_word(sen):
     # 初始化实例
     segmentor = Segmentor()
@@ -52,12 +54,23 @@ def sen_word(sen):
     # 转化成list输出
     words_list = list(words)
     # 释放模型
+    print(words_list)
     segmentor.release()
+    return words_list
+
+# 使用jieba进行分词
+def split_words(sen):
+    words = jieba.cut(sen, cut_all=False)
+    words_list = list(words)
+    print(words_list)
     return words_list
 
 # 词性标注. words:已经切分好的词
 def word_tag(words):
+    # 存放单词
     words_list = []
+    # 存放词性
+    tag_list = []
     # 初始化实例
     postagger = Postagger()
     # 加载模型
@@ -69,10 +82,24 @@ def word_tag(words):
         # print(words[i], postags[i])
         if postags[i] in pos:
             words_list.append(words[i])
-            # print(words[i], postags[i])
+            tag_list.append(postags[i])
+            print(words[i], postags[i], end=' ')
     postagger.release()
     # print(words_list)
-    return words_list
+    return words_list, tag_list
+
+# 依存句法分析
+def parse(words, postags):
+    # 初始化实例
+    parser = Parser()
+    # 加载模型
+    parser.load(parser_model)
+    # 句法分析
+    arcs = parser.parse(words, postags)
+    # arc.head 表示依存弧的父节点词的索引，arc.relation 表示依存弧的关系
+    print("\t".join("%d:%s" % (arc.head, arc.relation) for arc in arcs))
+    # 释放模型
+    parser.release()
 
 # 保存到json文件中
 def to_json(dict, save_path):
@@ -81,26 +108,34 @@ def to_json(dict, save_path):
         json_file.write('\n')
 
 if __name__ == '__main__':
-<<<<<<< Updated upstream
     # 原始文件
     txt_path = 'H:\python-workspace\pyltp\split_name\\action_code_data_0.txt'
     # 定义json的输出路径
-=======
     json_path = 'action_code_data_0.json'
     txt_path = 'action_code_data_0.txt'
->>>>>>> Stashed changes
     json_out_path = 'namesplit_only_noun.json'
     name_list = name_to_list(txt_path)
     for name_value in name_list:
         name_dict = {}
         name_dict["name"] = name_value
-        sen_list = sen_word(name_value)
-        words_list = word_tag(sen_list)
-        name_dict["word_list"] = words_list
+        sen_list = split_words(name_value)
+        # sen_list = sen_word(name_value)
+        words_tags_list = word_tag(sen_list)
+        parse(words_tags_list[0], words_tags_list[1])
+        # name_dict["word_list"] = words_list
         # print(name_dict)
-        to_json(name_dict, json_out_path)
-        gc.collect()
+        # to_json(name_dict, json_out_path)
+        # gc.collect()
+    # sen_list = ['机动车', '超车', '不', '按规定', '使用', '灯光', '的']
+    # words_list = word_tag(sen_list)
+    # parse(sen_list, words_list)
 
+    # sen = "你好，你觉得这个例子从哪里来的？当然还是直接复制官方文档，然后改了下这里得到的。"
+    # # sen_spliter(sen)
+    # words = sen_word(sen)
+    # tags = word_tag(words)
+    # # name_recognition(words, tags)
+    # parse(tags[0], tags[1])
 
 
 
