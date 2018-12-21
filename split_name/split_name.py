@@ -13,10 +13,9 @@ from pyltp import Postagger
 2. 对提取的name字段进行分词
 3. 对于分词的结果进行统计
 """
-cws_model = "E:\YanJiuSheng-download\\2a\ltp_data_v3.4.0\ltp_data_v3.4.0\cws.model"
-parser_model = "E:\YanJiuSheng-download\\2a\ltp_data_v3.4.0\ltp_data_v3.4.0\\parser.model"
-pos_model = "E:\YanJiuSheng-download\\2a\ltp_data_v3.4.0\ltp_data_v3.4.0\pos.model"
-
+cws_model = "F:\pycharm\yao\ltp_data_v3.4.0\cws.model"
+parser_model = "F:\pycharm\yao\ltp_data_v3.4.0\parser.model"
+pos_model = "F:\pycharm\yao\ltp_data_v3.4.0\pos.model"
 def load_json(path):
     with open(path, 'r') as f:
         # 加载json
@@ -71,8 +70,9 @@ def word_tag(words):
         if postags[i] in pos:
             words_list.append(words[i])
             # print(words[i], postags[i])
-    return words_list
+    postagger.release()
     # print(words_list)
+    return words_list
 
 # 保存到json文件中
 def to_json(dict, save_path):
@@ -81,9 +81,14 @@ def to_json(dict, save_path):
         json_file.write('\n')
 
 if __name__ == '__main__':
+<<<<<<< Updated upstream
     # 原始文件
     txt_path = 'H:\python-workspace\pyltp\split_name\\action_code_data_0.txt'
     # 定义json的输出路径
+=======
+    json_path = 'action_code_data_0.json'
+    txt_path = 'action_code_data_0.txt'
+>>>>>>> Stashed changes
     json_out_path = 'namesplit_only_noun.json'
     name_list = name_to_list(txt_path)
     for name_value in name_list:
@@ -92,9 +97,9 @@ if __name__ == '__main__':
         sen_list = sen_word(name_value)
         words_list = word_tag(sen_list)
         name_dict["word_list"] = words_list
+        # print(name_dict)
         to_json(name_dict, json_out_path)
         gc.collect()
-
 
 
 
