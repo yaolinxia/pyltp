@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3516751e-e4ef-4892-bda4-8e20f543d02c" name="Default" comment="split_name change" />
+    <list default="true" id="3516751e-e4ef-4892-bda4-8e20f543d02c" name="Default" comment="split_name change">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/split_name/split_name.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="108" column="10" lean-forward="true" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
+              <caret line="108" column="10" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
               <folding>
                 <element signature="e#45#56#0" expanded="true" />
                 <marker date="1545873807704" expanded="true" signature="1381:1500" ph="..." />
@@ -141,11 +143,12 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -158,16 +161,6 @@
             <path>
               <item name="yao" type="b2602c69:ProjectViewProjectNode" />
               <item name="yao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yao" type="462c0819:PsiDirectoryNode" />
-              <item name="ltp_data_v3.4.0" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yao" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yao" type="462c0819:PsiDirectoryNode" />
-              <item name="split_name" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -456,7 +449,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="954" y="73" width="974" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.43326038" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -626,7 +619,7 @@
     <entry file="file://$PROJECT_DIR$/split_name/split_name.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="108" column="10" lean-forward="true" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
+          <caret line="108" column="10" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
           <folding>
             <element signature="e#45#56#0" expanded="true" />
             <marker date="1545873807704" expanded="true" signature="1381:1500" ph="..." />
