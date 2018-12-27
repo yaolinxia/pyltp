@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3516751e-e4ef-4892-bda4-8e20f543d02c" name="Default" comment="split_name change">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3516751e-e4ef-4892-bda4-8e20f543d02c" name="Default" comment="split_name change" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/split_name/split_name.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="108" column="10" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
+            <state relative-caret-position="483">
+              <caret line="112" column="20" lean-forward="true" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
               <folding>
                 <element signature="e#45#56#0" expanded="true" />
                 <marker date="1545873807704" expanded="true" signature="1381:1500" ph="..." />
@@ -143,7 +141,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -451,12 +449,12 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.43326038" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.43326038" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.28121606" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.16776316" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.16776316" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.42128122" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -618,8 +616,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/split_name/split_name.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="108" column="10" selection-start-line="108" selection-start-column="10" selection-end-line="108" selection-end-column="10" />
+        <state relative-caret-position="483">
+          <caret line="112" column="20" lean-forward="true" selection-start-line="112" selection-start-column="20" selection-end-line="112" selection-end-column="20" />
           <folding>
             <element signature="e#45#56#0" expanded="true" />
             <marker date="1545873807704" expanded="true" signature="1381:1500" ph="..." />
