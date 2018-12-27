@@ -97,7 +97,9 @@ def parse(words, postags):
     # 句法分析
     arcs = parser.parse(words, postags)
     # arc.head 表示依存弧的父节点词的索引，arc.relation 表示依存弧的关系
-    print("\t".join("%d:%s" % (arc.head, arc.relation) for arc in arcs))
+    for arc in arcs:
+        print('\t'.join("%d:%s" % (arc.head, arc.relation)))
+    # print("\t".join("%d:%s" % (arc.head, arc.relation) for arc in arcs))
     # 释放模型
     parser.release()
 
