@@ -62,7 +62,7 @@ def sen_word(sen):
 def split_words(sen):
     words = jieba.cut(sen, cut_all=False)
     words_list = list(words)
-    print(words_list)
+    # print(words_list)
     return words_list
 
 # 词性标注. words:已经切分好的词
@@ -83,7 +83,7 @@ def word_tag(words):
         if postags[i] in pos:
             words_list.append(words[i])
             tag_list.append(postags[i])
-            print(words[i], postags[i], end=' ')
+            # print(words[i], postags[i], end=' ')
     postagger.release()
     # print(words_list)
     return words_list, tag_list
@@ -97,8 +97,14 @@ def parse(words, postags):
     # 句法分析
     arcs = parser.parse(words, postags)
     # arc.head 表示依存弧的父节点词的索引，arc.relation 表示依存弧的关系
-    for arc in arcs:
-        print('\t'.join("%d:%s" % (arc.head, arc.relation)))
+    # for arc in arcs:
+    #     print(' '.join("%d:%s" % (arc.head, arc.relation)))
+
+    for i in range(0, len(arcs)):
+        if arcs[i].relation == "ATT":
+            print( words[i], arcs[i].head, arcs[i].relation, end=' ')
+    print('\n')
+    #
     # print("\t".join("%d:%s" % (arc.head, arc.relation) for arc in arcs))
     # 释放模型
     parser.release()
@@ -120,9 +126,12 @@ if __name__ == '__main__':
     for name_value in name_list:
         name_dict = {}
         name_dict["name"] = name_value
+        # 分词
         sen_list = split_words(name_value)
         # sen_list = sen_word(name_value)
+        # 词性标注
         words_tags_list = word_tag(sen_list)
+        # 依存句法分析
         parse(words_tags_list[0], words_tags_list[1])
         # name_dict["word_list"] = words_list
         # print(name_dict)
